@@ -1,0 +1,284 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 80vh;
+  min-height: 60vh;
+}
+
+.scrollableContent {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0 1rem;
+}
+
+.scrollableContent::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollableContent::-webkit-scrollbar-track {
+  background: var(--neutral-cream);
+  border-radius: 3px;
+}
+
+.scrollableContent::-webkit-scrollbar-thumb {
+  background: var(--primary-gold);
+  border-radius: 3px;
+}
+
+.scrollableContent::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-gold-dark);
+}
+
+.formSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--neutral-brown);
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--primary-gold-light);
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.formRowSingle {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.fileUpload {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fileInput {
+  display: none;
+}
+
+.fileLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 2rem;
+  border: 2px dashed var(--primary-gold);
+  border-radius: 0.75rem;
+  background: var(--neutral-cream);
+  color: var(--neutral-brown);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  font-weight: 500;
+}
+
+.fileLabel:hover {
+  border-color: var(--primary-gold-dark);
+  background: var(--primary-gold-light);
+}
+
+.fileLabel.hasFile {
+  border-style: solid;
+  background: var(--success-green);
+  color: white;
+  border-color: var(--success-green);
+}
+
+.fileIcon {
+  width: 2rem;
+  height: 2rem;
+  opacity: 0.7;
+}
+
+.fileLabel.hasFile .fileIcon {
+  opacity: 1;
+}
+
+.fileInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.fileName {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.fileSize {
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+.preview {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.previewImage {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  border: 2px solid var(--neutral-cream);
+}
+
+.previewContent {
+  max-height: 300px;
+  overflow-y: auto;
+  padding: 1rem;
+  background: var(--neutral-cream);
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-gold-light);
+}
+
+.publishToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--neutral-warm);
+  border-radius: 0.5rem;
+  border: 1px solid var(--primary-gold-light);
+}
+
+.toggleLabel {
+  font-weight: 500;
+  color: var(--neutral-brown);
+}
+
+.toggleDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-top: 0.25rem;
+}
+
+.toggle {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.toggleInput {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggleSlider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #ccc;
+  transition: 0.2s;
+  border-radius: 1.5rem;
+}
+
+.toggleSlider:before {
+  position: absolute;
+  content: "";
+  height: 1.125rem;
+  width: 1.125rem;
+  left: 0.1875rem;
+  bottom: 0.1875rem;
+  background: white;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+.toggleInput:checked + .toggleSlider {
+  background: var(--primary-gold);
+}
+
+.toggleInput:checked + .toggleSlider:before {
+  transform: translateX(1.5rem);
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0 1rem 0;
+  border-top: 1px solid var(--neutral-cream);
+  background: white;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+
+.loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.error {
+  color: var(--error-red);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.magic .fileLabel {
+  border-image: linear-gradient(135deg, var(--primary-gold), var(--secondary-purple)) 1;
+}
+
+.magic .previewContent {
+  border-image: linear-gradient(135deg, var(--primary-gold), var(--secondary-purple)) 1;
+}
+
+@media (max-width: 768px) {
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .actionsLeft,
+  .actionsRight {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .fileLabel {
+    padding: 1.5rem;
+  }
+  
+  .previewImage {
+    height: 150px;
+  }
+  
+  .scrollableContent {
+    padding: 0 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .scrollableContent {
+    padding: 0 0.25rem;
+  }
+  
+  .formSection {
+    margin-bottom: 1rem;
+  }
+}

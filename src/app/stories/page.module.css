@@ -1,0 +1,254 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  padding-bottom: 20px;
+}
+
+.header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 80px 20px;
+  margin-bottom: 40px;
+}
+
+.headerContent {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.headerIcon {
+  flex-shrink: 0;
+}
+
+.libraryIcon {
+  width: 80px;
+  height: 80px;
+  color: #fbbf24;
+}
+
+.headerText {
+  flex: 1;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  font-family: var(--font-fairy);
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  opacity: 0.95;
+  margin-bottom: 16px;
+}
+
+.count {
+  font-size: 1rem;
+  opacity: 0.8;
+  font-weight: 600;
+  color: #fbbf24;
+}
+
+.storiesSection {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.storiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.paginationWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 40px 0;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.paginationButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: #667eea;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+  border: 2px solid #667eea;
+}
+
+.paginationButton:hover {
+  background: transparent;
+  color: #667eea;
+}
+
+.paginationInfo {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 500;
+}
+
+
+.emptyState {
+  text-align: center;
+  padding: 80px 20px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.emptyIcon {
+  width: 80px;
+  height: 80px;
+  color: #cbd5e1;
+  margin-bottom: 24px;
+}
+
+.emptyState h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 16px;
+  font-family: var(--font-fairy);
+}
+
+.emptyState p {
+  font-size: 1.125rem;
+  color: #64748b;
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .storiesGrid {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    padding: 60px 20px;
+  }
+  
+  .headerContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .libraryIcon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+  }
+  
+  .description {
+    font-size: 1.125rem;
+  }
+  
+  .storiesGrid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .paginationWrapper {
+    margin-top: 40px;
+    padding: 30px 20px;
+  }
+  
+  .emptyState {
+    padding: 60px 20px;
+  }
+  
+  .emptyIcon {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .emptyState h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  
+  .header {
+    padding: 40px 20px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .description {
+    font-size: 1rem;
+  }
+  
+  .storiesSection {
+    padding: 0 10px;
+  }
+  
+  .storiesGrid {
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .paginationWrapper {
+    margin-top: 30px;
+    padding: 20px 10px;
+  }
+  
+  .emptyState {
+    padding: 40px 20px;
+  }
+}
+
+.headerIcon {
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.storiesGrid > * {
+  transition: transform 0.2s ease-in-out;
+}
+
+.storiesGrid > *:hover {
+  transform: translateY(-2px);
+}

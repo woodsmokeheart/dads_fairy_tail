@@ -1,0 +1,161 @@
+.inputWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--neutral-brown);
+  margin-bottom: 0.25rem;
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid var(--neutral-cream);
+  border-radius: 0.5rem;
+  font-family: var(--font-modern);
+  font-size: 1rem;
+  background: var(--neutral-cream);
+  color: var(--neutral-dark);
+  transition: all 0.2s ease-in-out;
+}
+
+.input:hover {
+  border-color: var(--primary-gold-light);
+}
+
+.input:focus {
+  background: white;
+  border-color: var(--primary-gold);
+}
+
+.input::placeholder {
+  color: #9ca3af;
+}
+
+.error .input {
+  border-color: var(--error-red);
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.success .input {
+  border-color: var(--success-green);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.disabled .input {
+  background: #f3f4f6;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.small .input {
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+}
+
+.large .input {
+  padding: 1rem 1.25rem;
+  font-size: 1.125rem;
+}
+
+.message {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+.errorMessage {
+  color: var(--error-red);
+}
+
+.successMessage {
+  color: var(--success-green);
+}
+
+.helperMessage {
+  color: #6b7280;
+}
+
+.withIcon {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.25rem;
+  height: 1.25rem;
+  color: #9ca3af;
+  pointer-events: none;
+}
+
+.withIcon .input {
+  padding-left: 3rem;
+}
+
+.iconRight {
+  left: auto;
+  right: 1rem;
+}
+
+.iconRight + .input {
+  padding-left: 1rem;
+  padding-right: 3rem;
+}
+
+.fileInput {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.fileInput input[type="file"] {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.fileInputLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px dashed var(--primary-gold);
+  border-radius: 0.5rem;
+  background: var(--neutral-cream);
+  color: var(--neutral-brown);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.fileInputLabel:hover {
+  background: var(--primary-gold-light);
+  border-color: var(--primary-gold-dark);
+}
+
+.fileInputLabel.hasFile {
+  border-style: solid;
+  background: var(--success-green);
+  color: white;
+}
+
+.textarea {
+  min-height: 6rem;
+  resize: vertical;
+  font-family: inherit;
+}
+
+.magic .input {
+  background: linear-gradient(135deg, var(--neutral-cream) 0%, white 100%);
+  border-image: linear-gradient(135deg, var(--primary-gold), var(--secondary-purple)) 1;
+}
+

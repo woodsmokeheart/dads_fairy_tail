@@ -1,0 +1,30 @@
+.authButtons {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .authButtons {
+    gap: 1rem;
+  }
+}
+
+.userMenu {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+@media (max-width: 767px) {
+  .userMenu {
+    gap: 0.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .userMenu {
+    gap: 1rem;
+  }
+}

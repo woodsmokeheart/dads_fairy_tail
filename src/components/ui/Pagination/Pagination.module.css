@@ -1,0 +1,125 @@
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 2rem 0;
+  padding: 1rem;
+}
+
+.pages {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.pageButton {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pageButton:hover:not(:disabled) {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pageButton.active {
+  background: var(--primary-gold);
+  color: white;
+  box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+}
+
+.navButton {
+  min-width: 2.5rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.navButton:hover:not(:disabled) {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.navIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .pagination {
+    gap: 0.25rem;
+    margin: 1.5rem 0;
+    padding: 0.5rem;
+  }
+
+  .pages {
+    gap: 0.125rem;
+  }
+
+  .pageButton,
+  .navButton {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+
+  .navIcon {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  .dots {
+    min-width: 2rem;
+    height: 2rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.125rem;
+    margin: 1rem 0;
+    padding: 0.25rem;
+  }
+
+  .pageButton,
+  .navButton {
+    min-width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+
+  .navIcon {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  .dots {
+    min-width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+  }
+}
