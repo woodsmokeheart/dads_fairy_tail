@@ -120,13 +120,14 @@ function formatStoryToCard(story: Story): StoryCardData {
 }
 
 interface StoriesPageProps {
-  searchParams: {
+  searchParams: Promise<{
     page?: string;
-  };
+  }>;
 }
 
 export default async function StoriesPage({ searchParams }: StoriesPageProps) {
-  const currentPage = parseInt(searchParams.page || '1', 10);
+  const resolvedSearchParams = await searchParams;
+  const currentPage = parseInt(resolvedSearchParams.page || '1', 10);
   const storiesData = await getStoriesPaginated(currentPage, 6);
 
   return (
