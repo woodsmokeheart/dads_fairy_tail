@@ -47,6 +47,9 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
     title: `${story.title} - Папины сказки`,
     description: story.excerpt,
     keywords: story.title,
+    alternates: {
+      canonical: `https://dads-fairy-tales.vercel.app/story/${story.id}`
+    },
     openGraph: {
       title: story.title,
       description: story.excerpt,
@@ -54,6 +57,26 @@ export async function generateMetadata({ params }: StoryPageProps): Promise<Meta
       publishedTime: story.createdAt,
       authors: [story.author.username],
     },
+    other: {
+      'application/ld+json': JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": story.title,
+        "description": story.excerpt,
+        "author": {
+          "@type": "Person",
+          "name": story.author.username
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Папины сказки"
+        },
+        "datePublished": story.createdAt,
+        "dateModified": story.updatedAt,
+        "inLanguage": "ru",
+        "url": `https://dads-fairy-tales.vercel.app/story/${story.id}`
+      })
+    }
   };
 }
 

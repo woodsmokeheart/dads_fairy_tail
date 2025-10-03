@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   creator: "Папины сказки",
   publisher: "Папины сказки",
   robots: "index, follow",
+  alternates: {
+    canonical: "https://dads-fairy-tales.vercel.app"
+  },
   openGraph: {
     type: "website",
     locale: "ru_RU",
@@ -44,8 +47,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Папины сказки",
+    "description": "Волшебное веб-приложение для создания и чтения авторских сказок для детей до 5 лет",
+    "url": "https://dads-fairy-tales.vercel.app",
+    "inLanguage": "ru",
+    "author": {
+      "@type": "Organization",
+      "name": "Папины сказки"
+    },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://dads-fairy-tales.vercel.app/stories?search={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <html lang="ru">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body
         className={`${inter.variable} ${georgia.variable} antialiased`}
       >
