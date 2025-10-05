@@ -1,9 +1,7 @@
 import { supabase } from './supabase';
 import type { AuthUser } from '@/types';
 
-/**
- * Проверяет, является ли пользователь модератором
- */
+
 export async function isModerator(userId: string): Promise<boolean> {
   try {
     const { data: profile } = await supabase
@@ -19,9 +17,7 @@ export async function isModerator(userId: string): Promise<boolean> {
   }
 }
 
-/**
- * Получает статистику пользователя из базы данных
- */
+
 export async function getUserStats(userId: string): Promise<{ stories_created: number; stories_published: number }> {
   try {
     const { data, error } = await supabase
@@ -48,9 +44,7 @@ export async function getUserStats(userId: string): Promise<{ stories_created: n
   }
 }
 
-/**
- * Получает полную информацию о пользователе включая статус модератора и статистику
- */
+
 export async function getUserWithModeratorStatus(user: Record<string, unknown>): Promise<AuthUser | null> {
   if (!user || !user.id) return null;
 

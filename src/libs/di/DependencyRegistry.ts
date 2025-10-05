@@ -1,5 +1,3 @@
-
-
 export interface DependencyFactory<T = unknown> {
   getInstance: (...args: unknown[]) => T;
 }

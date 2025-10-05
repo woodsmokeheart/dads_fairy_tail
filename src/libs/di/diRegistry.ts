@@ -10,7 +10,6 @@ import { ExecutionQueue } from '~/libs/async/ExecutionQueue';
 
 export const diRegistry = new DependencyRegistry<Dependencies>();
 
-// Регистрация зависимостей
 diRegistry.register('store', { getInstance: () => store });
 diRegistry.register('executionQueue', ExecutionQueue);
 diRegistry.register('logger', LoggerService);
